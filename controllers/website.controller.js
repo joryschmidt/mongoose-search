@@ -6,12 +6,13 @@ exports.create = function(req, res) {
   newWebsite.title = req.body.title;
   newWebsite.url = req.body.url;
   newWebsite.description = req.body.description;
+  newWebsite.submittedBy.id = req.body.id;
   
   newWebsite.save(function(err, result) {
     if (err) console.log(err);
     else {
       console.log(result);
-      res.send(200).end();
+      res.sendStatus(200).end();
     }
   });
 };

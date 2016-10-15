@@ -29,7 +29,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 var users = require("./routes/user");
+var website = require('./routes/website');
 app.use('/users', users);
+app.use('/website', website);
 
 var port = process.env.PORT;
 app.listen(port, function() {
